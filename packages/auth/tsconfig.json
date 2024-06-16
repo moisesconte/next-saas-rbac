@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 {
   "extends": "@saas/tsconfig/library.json",
   "include": [
     "src/**/*"
   ]
+=======
+{
+  "extends": "@saas/tsconfig/library.json",
+  "include": [
+    "src/**/*"
+  ]
+>>>>>>> fed5a4065fe061d0f61ef6f7274f867b0b24ca53
 }

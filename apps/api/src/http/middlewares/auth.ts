@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { FastifyInstance } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 
@@ -46,3 +47,23 @@ export const auth = fastifyPlugin(async (app: FastifyInstance) => {
     }
   })
 })
+=======
+import { FastifyInstance } from 'fastify'
+import { fastifyPlugin } from 'fastify-plugin'
+
+import { UnauthorizedError } from '../routes/_errors/unauthorized-error'
+
+export const auth = fastifyPlugin(async (app: FastifyInstance) => {
+  app.addHook('preHandler', async (request) => {
+    request.getCurrentUserId = async () => {
+      try {
+        const { sub } = await request.jwtVerify<{ sub: string }>()
+
+        return sub
+      } catch {
+        throw new UnauthorizedError('Invalid auth token')
+      }
+    }
+  })
+})
+>>>>>>> fed5a4065fe061d0f61ef6f7274f867b0b24ca53

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "extends": "@saas/tsconfig/node.json",
   "include": [
@@ -12,4 +13,20 @@
       ]
     }
   }
+=======
+{
+  "extends": "@saas/tsconfig/node.json",
+  "include": [
+    "src/**/*",
+    "@types/*.d.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
+>>>>>>> fed5a4065fe061d0f61ef6f7274f867b0b24ca53
 }
